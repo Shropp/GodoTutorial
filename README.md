@@ -31,4 +31,25 @@ Here is a [good video](https://youtu.be/egtBFbWz7N4?si=qkvJw5ZxDrjRuPw9) on how 
 ![Image of External Editor configuration](./DocSupport/external_editor_settings.png)
 
 # Getting Started
+So you think you set everything up right? Well, we'll see about that.<br>
+Since everyone has a different skillset, I'll be going in-depth on how to do everything. If something seems familiar, feel free to skip ahead. I'll try to **put any surprising information in bold** so that you can look for it if the rest of the information is just review for you.
 
+## Downloading the Repo
+If you didn't know, the project is stored in a git repository, which is essentially where everything you need to build the project will be stored.
+
+1. Open GitHub Desktop and sign in with your GitHub information (if you don't have an account, [go to the website](https://github.com) and sign up).
+2. Hit File -> Clone Repository, and select the URL tab.
+3. Copy the address of [this GitHub repo](https://github.com/Shropp/GodoTutorial) and paste it into the URL tab. You can find it by hitting the ```<> Code``` button, going to the local tab, and selecting HTTPS.<br><br>
+![Image of Code button](./DocSupport/github_code_link.png)<br><br>
+4. Hit Clone, and the project should download.<br><br>
+![Image of cloning screen](./DocSupport/github_desktop_clone_project.png)
+
+## Importing the Project
+This is a very straightforward part of the process - you just need the path where the repo is.
+1. Launch Godot by running the executable in your extracted folder.
+2. When you launch, hit the import button and navigate to the directory containing the project. Once you've selected it, hit ```Import and Edit``` to open the project.<br><br>
+![Image of import steps](./DocSupport/godot_import_and_edit.png)
+
+## Testing the installation
+Once it's started, you should be able to hit the play button at the top right to build and run the project. If this is done properly, you should have a gray window appear in the center of your screen and a message in the console telling you everything worked as intended.<br><br>
+![Image of setup working](./DocSupport/godot_setup_complete.png)

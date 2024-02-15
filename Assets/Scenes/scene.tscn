@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://chfs6bj47qn5n"]
+[gd_scene load_steps=3 format=3 uid="uid://chfs6bj47qn5n"]
 
+[ext_resource type="Script" path="res://Assets/Scripts/SceneVerify.cs" id="1_uca74"]
 [ext_resource type="PackedScene" uid="uid://cysvq05pjotdn" path="res://Assets/Templates/floor.tscn" id="1_xwgj4"]
 
 [node name="Scene" type="Node3D"]
+script = ExtResource("1_uca74")
 
 [node name="Floor" parent="." instance=ExtResource("1_xwgj4")]
