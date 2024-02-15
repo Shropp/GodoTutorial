@@ -1,5 +1,5 @@
 # GodoTutorial
-This is a tutorial repo for some friends on some Godot basics.
+This is a tutorial repo for some friends on some Godot basics. Not much to see here.
 
 
 
