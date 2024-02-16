@@ -95,7 +95,7 @@ In the case of the game engine, this works the same way.
 * ```StaticBody3D``` can have a physics material, constant linear velocity, and constant angular velocity.
 * StaticBody3D is a subclassification of ```PhysicsBody3D```, which allows the object to lock certain attributes of its motion and allows it to interact with the physics system. 
 * PhysicsBody3D is a subclass of ```CollisionObject3D```, which defines which other objects will allow 'collision' (meaning they won't pass through each other)
-* CollisionBody3D is a subclass of ```Node3D```, which defines where and how the object looks in 3D space.
+* CollisionObject3D is a subclass of ```Node3D```, which defines where and how the object looks in 3D space.
 * Finally, Node3D is a subclass of ```Node```, the base class of everything in the game engine.
 
 ---
@@ -127,3 +127,36 @@ Modifying the template will modify other instances of the object, so long as the
 
 Once you have done that, return to the "scene" tab at the top of your screen to see that in the original scene the floor have expanded. **Note that we only expanded the MeshInstance3D and not the CollisionShape3D. Go ahead and expand that following the same steps as you did for MeshInstance3D.<br><br>
 ![Image of Returning to Scene](./DocSupport/godot_return_to_scene.png)
+
+# Creating a Character
+This is where things get interesting.
+
+
+## Making the Character
+First we need to actually make the character using Godot components. 
+
+### 1. CharacterBody3D
+The first thing you're going to want to do is **hit the + button** at the top left of the Scene tree. From there, search for ```CharacterBody3D```, select it from the options below, and hit Create. If this isn't automatically a child of Scene, drag the newly created CharacterBody3D onto Scene - the root node. You can rename this object by right clicking on it and selecting rename (I named mine "Archie"). Go into the transform in the Inspector under Node3D and set the y-position to 1.<br><br>
+![Image of creating CharacterBody3D](./DocSupport/godot_create_characterBody3D.png)
+
+### 2. CollisionShape3D
+Much like you made the CharacterBody3D, create a ```CollisionShape3D```, and this time drag it onto your newly created CharacterBody3D. Once you've done that, select the Shape dropdown under CollisionShape3D in the inspector and select **New CapsuleShape3D**. This should be centered around (0, 1, 0) if you want to zoom in there. Note that if you had to drag the CollisionShape3D into the CharacterBody3D, then you will likely have to update the transform to position (0, 0, 0). <br>This is what it should look like when you are done:
+![Image of creating CollisionShape3D](./DocSupport/godot_collisionShape3D_configuration.png)
+
+### 3. MeshInstance3D
+Again, like you made the past one, create a ```MeshInstance3D```, and this time make it a child of the CollisionShape3D. You could also make this a child of the CharacterBody3D, but now you can adjust the transform of both at the same time using the CollisionShape3D. Once again, if you had to drag it in yourself, you may have to update the transform of the MeshInstance3D to position (0, 0, 0). With the MeshInstance3D selected, go to the inspector and select **New CapsuleMesh** from the mesh dropdown under MeshInstance3D. <br> This is what it should look like when you are done:
+![Image of creating MeshInstance3D](./DocSupport/godot_meshInstance3D_configuration.png)
+
+### 4. Camera3D
+We need to see your character when playing the game, so add a ```Camera3D``` object as a child of your CharacterBody3D. Set its transform position to (0.5, 0.5, 2.5). There should be a toggle that says *Preview* at the top left of your scene viewer.<br> This is what it should look like when you are done:<br><br>
+![Image of creating Camera3D](./DocSupport/godot_camera3D_configuration.png)
+
+### 5. DirectionalLight3D
+Again, we need to see your character when playing the game, so add a ```DirectionalLight3D`` object as a child of Scene. Set the transform rotation to (-30, 90, 0). Under Light3D, click on the Shadow dropdown and click the Enabled checkbox.<br>
+This is what it should look like when you are done:<br><br>
+![Image of creating DirectionalLight3D](./DocSupport/godot_directionalLight3D_configuration.png)
+
+With all the objects in place, select your ```CharacterBody3D``` in the inspector and click the add script button, or right click the object and select Attach Script. Set the language to C# and save the script under ```Assets/Scripts/<your_script_name>.cs```. With all that done, hit create.
+![Image of adding script](./DocSupport/godot_add_script.png)
+
+With that done, you should be able to hit the play button and move around using the arrow keys and the space bar. Try it out.
