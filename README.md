@@ -8,7 +8,7 @@ This is a tutorial repo for some friends on some Godot basics. Not much to see h
 # Getting Set Up
 There's a few tools you'll need to have downloaded and ready before we get started.
 ## Downloading the Engine/Dependencies
-First thing's first, you need to download the game engine. <br>Go to [this page](https://godotengine.org/download/windows/) and **download the .NET version of Godot**, circled in red below.<br><br>
+First thing's first, you need to download the game engine. <br>Go to [this page](https://godotengine.org/download/) and **download the .NET version of Godot**, circled in red below.<br><br>
 ![Image of the Godot download](./DocSupport/download_godot_dot_net.png)
 
 The game engine comes in a zip folder, so extract it to somewhere more permanent (or don't, I'm not your mom).
