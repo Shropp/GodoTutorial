@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cysvq05pjotdn"]
+[gd_scene load_steps=6 format=3 uid="uid://cysvq05pjotdn"]
+
+[ext_resource type="Script" path="res://Assets/Templates/Ava.gd" id="1_s5ew6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jagbk"]
 size = Vector3(20, 1, 20)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5nmuo"]
 size = Vector3(20, 1, 20)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ajto7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o2ci0"]
 
 [node name="Floor" type="StaticBody3D"]
 
@@ -16,3 +22,23 @@ shape = SubResource("BoxShape3D_jagbk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_5nmuo")
 skeleton = NodePath("../CollisionShape3D")
+
+[node name="Ava" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_s5ew6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ava"]
+shape = SubResource("CapsuleShape3D_ajto7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ava/CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_o2ci0")
+
+[node name="Camera3D" type="Camera3D" parent="Ava"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3.25, 5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.71681, 9.09952)
+
+[node name="Window" type="Window" parent="."]
+
+[node name="Popup" type="Popup" parent="Window"]
